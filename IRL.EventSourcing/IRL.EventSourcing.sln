@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRL.EventSourcing.API", "IRL.EventSourcing.API\IRL.EventSourcing.API.csproj", "{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRL.EventSourcing.Business", "IRL.EventSourcing.Business\IRL.EventSourcing.Business.csproj", "{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{53D99C01-4DB7-4DE6-92AD-26A0C4ADA9ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tst", "tst", "{3A7CA005-736A-41B8-8A29-A8DB61ACDD3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRL.EventSourcing.Domain", "IRL.EventSourcing.Domain\IRL.EventSourcing.Domain.csproj", "{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRL.EventSourcing.Infra", "IRL.EventSourcing.Infra\IRL.EventSourcing.Infra.csproj", "{B9B31185-FA78-4CBB-8633-0E8B18D70FFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRL.EventSourcing.Tests", "IRL.EventSourcing.Tests\IRL.EventSourcing.Tests.csproj", "{0821F292-F5BD-4FC9-8D1D-748C69CBE36E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B31185-FA78-4CBB-8633-0E8B18D70FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B31185-FA78-4CBB-8633-0E8B18D70FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B31185-FA78-4CBB-8633-0E8B18D70FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B31185-FA78-4CBB-8633-0E8B18D70FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0821F292-F5BD-4FC9-8D1D-748C69CBE36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0821F292-F5BD-4FC9-8D1D-748C69CBE36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0821F292-F5BD-4FC9-8D1D-748C69CBE36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0821F292-F5BD-4FC9-8D1D-748C69CBE36E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FEF0EB18-AEFD-48E0-967B-80ECFD4032D9} = {53D99C01-4DB7-4DE6-92AD-26A0C4ADA9ED}
+		{150D6A95-EA7E-43B4-92FF-1A7F3B17FB62} = {53D99C01-4DB7-4DE6-92AD-26A0C4ADA9ED}
+		{61DAF4C3-9C8E-4233-B6B3-D1F5831D5904} = {53D99C01-4DB7-4DE6-92AD-26A0C4ADA9ED}
+		{B9B31185-FA78-4CBB-8633-0E8B18D70FFE} = {53D99C01-4DB7-4DE6-92AD-26A0C4ADA9ED}
+		{0821F292-F5BD-4FC9-8D1D-748C69CBE36E} = {3A7CA005-736A-41B8-8A29-A8DB61ACDD3F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFA49068-A545-4AD6-88EF-6E753C2425EF}
+	EndGlobalSection
+EndGlobal
