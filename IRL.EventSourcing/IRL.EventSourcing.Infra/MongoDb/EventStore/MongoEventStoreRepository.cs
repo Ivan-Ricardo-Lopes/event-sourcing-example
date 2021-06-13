@@ -30,7 +30,7 @@ namespace IRL.EventSourcing.Infra.MongoDb.EventStore
 
             var database = connectionFactory.MongoDatabase();
             var collection = database.GetCollection<EventStoreDocument>("events");
-            var filter = Builders<EventStoreDocument>.Filter.Empty;
+            var filter = Builders<EventStoreDocument>.Filter.Where(x => x.AggregateId == aggregateRootId.ToString());
             var result = await collection.FindAsync(filter);
             var events = await result.ToListAsync();
 
