@@ -1,7 +1,7 @@
-﻿using IRL.EventSourcing.Commands.Common;
+﻿using IRL.EventSourcing.Application.Common;
 using MediatR;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.CreateAccount
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.CreateAccount
 {
     public class CreateAccountCommand : IRequest<CommandResponse<CreateAccountResponse>>
     {

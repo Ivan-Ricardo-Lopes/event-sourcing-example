@@ -13,7 +13,7 @@ namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
         public decimal Amount { get; private set; }
         public TransactionType Type { get; private set; }
         public DateTime CreatedDate { get; private set; }
-        public string Description { get; set; }
+        public string Description { get; private set; }
         public State State { get; set; }
 
         public static class FinanceTransactionFactory

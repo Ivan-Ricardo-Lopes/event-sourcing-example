@@ -1,7 +1,7 @@
-﻿using IRL.EventSourcing.Commands.Common;
+﻿using IRL.EventSourcing.Application.Common;
 using MediatR;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.Withdraw
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.Withdraw
 {
     public class WithdrawCommand : IRequest<CommandResponse<WithdrawResponse>>
     {

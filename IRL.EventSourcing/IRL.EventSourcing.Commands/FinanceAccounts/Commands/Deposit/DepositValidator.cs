@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.Deposit
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.Deposit
 {
     public class DepositValidator : AbstractValidator<DepositCommand>
     {

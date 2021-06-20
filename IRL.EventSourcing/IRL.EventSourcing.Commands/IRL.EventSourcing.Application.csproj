@@ -8,6 +8,12 @@
     <PackageReference Include="FluentValidation" Version="10.2.3" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="TacticalDDD" Version="1.0.32" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IRL.EventSourcing.Domain\IRL.EventSourcing.Domain.csproj" />
+    <ProjectReference Include="..\IRL.EventSourcing.Infra\IRL.EventSourcing.Infra.csproj" />
   </ItemGroup>
 
 </Project>

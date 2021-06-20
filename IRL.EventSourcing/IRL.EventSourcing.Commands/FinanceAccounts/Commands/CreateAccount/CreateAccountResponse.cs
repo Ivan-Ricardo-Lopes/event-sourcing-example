@@ -1,4 +1,4 @@
-﻿namespace IRL.EventSourcing.Commands.FinanceAccounts.CreateAccount
+﻿namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.CreateAccount
 {
     public class CreateAccountResponse
     {

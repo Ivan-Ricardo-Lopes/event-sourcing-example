@@ -1,7 +1,7 @@
-﻿using IRL.EventSourcing.Commands.Common;
+﻿using IRL.EventSourcing.Application.Common;
 using MediatR;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.Deposit
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.Deposit
 {
     public class DepositCommand : IRequest<CommandResponse<DepositResponse>>
     {

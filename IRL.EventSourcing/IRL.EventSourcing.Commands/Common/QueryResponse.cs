@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace IRL.EventSourcing.Application.Common
 {
-    public class CommandResponse<T>
+    public class QueryResponse<T>
     {
-        public CommandResponse()
+        public QueryResponse()
         {
             this.Payload = (T)Activator.CreateInstance(typeof(T));
         }
 
-        public CommandResponse(ICollection<string> errors)
+        public QueryResponse(ICollection<string> errors)
         {
             Errors = errors;
         }

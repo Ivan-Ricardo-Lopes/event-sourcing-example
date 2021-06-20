@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FinanceAccounts\DomainEvents\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="TacticalDDD" Version="1.0.32" />
   </ItemGroup>
 </Project>

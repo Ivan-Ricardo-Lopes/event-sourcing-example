@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.Withdraw
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.Withdraw
 {
     public class WithdrawValidator : AbstractValidator<WithdrawCommand>
     {

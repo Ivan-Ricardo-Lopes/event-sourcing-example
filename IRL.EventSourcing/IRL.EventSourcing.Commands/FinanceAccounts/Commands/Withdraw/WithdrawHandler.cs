@@ -1,10 +1,10 @@
-﻿using IRL.EventSourcing.Commands.Common;
+﻿using IRL.EventSourcing.Application.Common;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace IRL.EventSourcing.Commands.FinanceAccounts.Withdraw
+namespace IRL.EventSourcing.Application.FinanceAccounts.Commands.Withdraw
 {
     public class WithdrawHandler : IRequestHandler<WithdrawCommand, CommandResponse<WithdrawResponse>>
     {
