@@ -12,4 +12,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IRL.EventSourcing.Application\IRL.EventSourcing.Application.csproj" />
+    <ProjectReference Include="..\IRL.EventSourcing.Commands\IRL.EventSourcing.Application.csproj" />
+  </ItemGroup>
+
 </Project>
