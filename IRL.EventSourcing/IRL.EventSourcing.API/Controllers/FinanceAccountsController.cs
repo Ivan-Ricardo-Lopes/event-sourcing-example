@@ -35,7 +35,7 @@ namespace IRL.EventSourcing.API.Controllers
         public async Task<IActionResult> Post([FromBody] CreateAccountCommand command)
         {
             var result = await _mediator.Send(command);
-            if (result.IsSuccess)
+            if (result.IsValid)
                 return Ok(result.Payload);
 
             return BadRequest(result.Errors);
@@ -46,7 +46,7 @@ namespace IRL.EventSourcing.API.Controllers
         public async Task<IActionResult> Deposit([FromBody] DepositCommand command)
         {
             var result = await _mediator.Send(command);
-            if (result.IsSuccess)
+            if (result.IsValid)
                 return Ok(result.Payload);
 
             return BadRequest(result.Errors);
@@ -57,7 +57,7 @@ namespace IRL.EventSourcing.API.Controllers
         public async Task<IActionResult> Deposit([FromBody] WithdrawCommand command)
         {
             var result = await _mediator.Send(command);
-            if (result.IsSuccess)
+            if (result.IsValid)
                 return Ok(result.Payload);
 
             return BadRequest(result.Errors);

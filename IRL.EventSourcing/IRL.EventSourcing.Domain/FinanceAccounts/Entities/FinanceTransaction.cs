@@ -16,21 +16,18 @@ namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
         public string Description { get; private set; }
         public State State { get; set; }
 
-        public static class FinanceTransactionFactory
+        public static FinanceTransaction Create(string id, int accountCode, decimal amount, string description, TransactionType type)
         {
-            public static FinanceTransaction Create(string id, int accountCode, decimal amount, string description, TransactionType type, DateTime? CreatedDate = null, State? state = null)
+            return new FinanceTransaction()
             {
-                return new FinanceTransaction()
-                {
-                    Id = new GuidId(id),
-                    AccountCode = accountCode,
-                    Amount = amount,
-                    Description = description,
-                    Type = type,
-                    CreatedDate = CreatedDate ?? DateTime.UtcNow,
-                    State = state ?? State.Added
-                };
-            }
+                Id = new GuidId(id),
+                AccountCode = accountCode,
+                Amount = amount,
+                Description = description,
+                Type = type,
+                CreatedDate = DateTime.UtcNow,
+                State = State.Added
+            };
         }
     }
 }

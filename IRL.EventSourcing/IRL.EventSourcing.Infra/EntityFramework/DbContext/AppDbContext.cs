@@ -108,5 +108,7 @@ namespace IRL.EventSourcing.Infra.EntityFramework.DbContext
         public DbSet<FinanceAccountDbModel> FinanceAccounts { get; set; }
 
         public DbSet<FinanceTransactionDbModel> FinanceTransactions { get; set; }
+
+        public DbSet<FinanceAccountCodeDbModel> FinanceAccountCodes { get; set; }
     }
 }

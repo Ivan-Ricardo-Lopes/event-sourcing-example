@@ -9,7 +9,7 @@ using Tactical.DDD;
 
 namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
 {
-    public class FinanceAccount : Tactical.DDD.EventSourcing.AggregateRoot<GuidId>, IObjectWithState
+    public class FinanceAccount : Tactical.DDD.EventSourcing.AggregateRoot<FinanceAccountId>, IObjectWithState
     {
         public FinanceAccount(IEnumerable<IDomainEvent> events) : base(events)
         {
@@ -19,27 +19,36 @@ namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
         {
         }
 
-        public override GuidId Id { get; protected set; }
+        public override FinanceAccountId Id { get; protected set; }
         public int AccountCode { get; private set; }
         public string CustomerCode { get; private set; }
         public Balance Balance { get; private set; }
         public ICollection<FinanceTransaction> FinanceTransactions { get; private set; }
         public State State { get; set; }
 
-        public void Deposit(decimal amount, string description)
+        public static FinanceAccount Create(int accountCode, string CustomerCode, out FinanceAccountCreated @event)
         {
-            Apply(new MoneyDeposited(Guid.NewGuid().ToString(), AccountCode, amount, DateTime.UtcNow, description));
+            var account = new FinanceAccount();
+            @event = new FinanceAccountCreated(new GuidId().ToString(), accountCode, CustomerCode);
+            account.Apply(@event);
+            return account;
         }
 
-        public void Withdraw(decimal amount, string description)
+        public void Deposit(decimal amount, string description, out MoneyDeposited @event)
         {
-            //validate amount, description
-            Apply(new MoneyWithdrawn(Guid.NewGuid().ToString(), AccountCode, amount, DateTime.UtcNow, description));
+            @event = new MoneyDeposited(Guid.NewGuid().ToString(), AccountCode, amount, DateTime.UtcNow, description);
+            Apply(@event);
+        }
+
+        public void Withdraw(decimal amount, string description, out MoneyWithdrawn @event)
+        {
+            @event = new MoneyWithdrawn(Guid.NewGuid().ToString(), AccountCode, amount, DateTime.UtcNow, description);
+            Apply(@event);
         }
 
         public void On(FinanceAccountCreated @event)
         {
-            Id = new GuidId(@event.Id);
+            Id = new FinanceAccountId(@event.Id);
             AccountCode = @event.AccountCode;
             CustomerCode = @event.CustomerCode;
             this.State = State.Added;
@@ -49,7 +58,7 @@ namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
 
         public void On(MoneyDeposited @event)
         {
-            var transaction = FinanceTransaction.FinanceTransactionFactory.Create(@event.TransactionId, AccountCode, @event.Amount, @event.Description, TransactionType.Inbound, @event.CreatedDate);
+            var transaction = FinanceTransaction.Create(@event.TransactionId, AccountCode, @event.Amount, @event.Description, TransactionType.Inbound);
             FinanceTransactions.Add(transaction);
             Balance.Add(@event.Amount);
             this.State = State.Modified;
@@ -57,21 +66,10 @@ namespace IRL.EventSourcing.Domain.FinanceAccounts.Entities
 
         public void On(MoneyWithdrawn @event)
         {
-            var transaction = FinanceTransaction.FinanceTransactionFactory.Create(@event.TransactionId, AccountCode, @event.Amount, @event.Description, TransactionType.Outbound, @event.CreatedDate);
+            var transaction = FinanceTransaction.Create(@event.TransactionId, AccountCode, @event.Amount, @event.Description, TransactionType.Outbound);
             FinanceTransactions.Add(transaction);
             Balance.Remove(@event.Amount);
             this.State = State.Modified;
-        }
-
-        public static class FinanceAccountFactory
-        {
-            public static FinanceAccount Create(int accountCode, string CustomerCode, out FinanceAccountCreated @event)
-            {
-                var account = new FinanceAccount();
-                @event = new FinanceAccountCreated(new GuidId().ToString(), accountCode, CustomerCode);
-                account.Apply(@event);
-                return account;
-            }
         }
     }
 }

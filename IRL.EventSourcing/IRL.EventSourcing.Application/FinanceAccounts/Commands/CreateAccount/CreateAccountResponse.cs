@@ -2,6 +2,5 @@
 {
     public class CreateAccountResponse
     {
-        public int AccountCode { get; set; }
     }
 }

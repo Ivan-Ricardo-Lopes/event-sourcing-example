@@ -5,6 +5,6 @@ namespace IRL.EventSourcing.Infra.Stream
 {
     public interface IEventStream
     {
-        Task Publish(string topic, IDomainEvent @event);
+        Task Publish(string topic, IDomainEvent @event, string partitionKey = null);
     }
 }

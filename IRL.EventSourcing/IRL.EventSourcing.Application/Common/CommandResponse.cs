@@ -18,11 +18,19 @@ namespace IRL.EventSourcing.Application.Common
 
         public T Payload { get; set; }
         public ICollection<string> Errors { get; set; } = new List<string>();
-        public bool IsSuccess => !Errors.Any();
+        public bool IsValid => !Errors.Any();
 
         public void AddError(string error)
         {
             Errors.Add(error);
+        }
+
+        public void AddError(IEnumerable<string> errors)
+        {
+            foreach (var error in errors)
+            {
+                Errors.Add(error);
+            }
         }
     }
 }
